@@ -85,12 +85,14 @@ function filterProducts(products, callback) {
 function sortInventory(inventory, key) {
     if (!Array.isArray(inventory) || typeof key !== 'string') return [];
     // TODO: Implement sorting logic
-    return [];
+
+    return inventory.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// console.log(filterProducts(products, filterBy));
+//console.log(sortInventory(products, name));
 
 module.exports = {
     filterProducts,
-    calculateDiscount
+    calculateDiscount,
+    sortInventory
 }
