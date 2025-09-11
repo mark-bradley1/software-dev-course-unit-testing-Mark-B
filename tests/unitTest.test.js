@@ -46,6 +46,32 @@ describe("filterProducts", function(){
     });
 })
 
+//Positive Test Case
+describe('sortInventory function', () => {
+    test('sorts inventory alphabetically',() =>{
+        const inventory = products;
+        const expectedInventory = [{id: 3, name: "Bigger Ladder", price: 100},
+            {id: 4, name: "Hammer", price: 5},
+            {id: 2, name: "Ladder", price: 50},
+            {id: 5, name: "Sledge hammer", price: 20},
+            {id: 1, name: "Stepstool", price: 15}];
+        expect(unitTest.sortInventory(inventory, "name")).toEqual(expectedInventory);
+    })
+
+    //Negative Test Case
+    test('returns empty array when searching a non-string', () =>{
+        const inventory = products;
+        const result = unitTest.sortInventory(inventory, products.id);
+        expect (result).toEqual([]);
+    });
+
+    //Edge Test Case
+    test('returns an empty array when sorting an empty array', () =>{
+        const inventory = [];
+        const result = unitTest.sortInventory(inventory, 'name');
+        expect(result).toEqual([]);
+    })
+})
 
 describe('calculateDiscount function', () => {
     // positive
