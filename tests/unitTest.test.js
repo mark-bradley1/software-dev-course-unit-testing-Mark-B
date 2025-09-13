@@ -62,5 +62,38 @@ describe('calculateDiscount function', () => {
     });
 })
 
+describe('sortInventory function', () => {
+    // positive
+    test("sorts items from smallest price to largest price", () => {
+        const expectedProducts = [
+            {id: 4, name: "Hammer", price: 5},
+            {id: 1, name: "Stepstool", price: 15},
+            {id: 5, name: "Sledge hammer", price: 20},
+            {id: 2, name: "Ladder", price: 50}, 
+            {id: 3, name: "Bigger Ladder", price: 100}          
+        ];
 
+        const result = unitTest.sortInventory(products, "price");
+        expect(result).toEqual(expectedProducts);
+    });
+    // negative
+    test("returns an empty array when key is not a string", () => {
+        const result = unitTest.sortInventory(products, products.price);
+        expect(result).toEqual([]);
+    });
+    // edge
+    test("returns an empty array when inventory is empty", () => {
+        const inventory = [];
+        const result = unitTest.sortInventory(inventory, "price");
+        expect(result).toEqual([]);
+    });
+})
 
+// const expectedProducts = [
+//             {id: 3, name: "Bigger Ladder", price: 100},
+//             {id: 4, name: "Hammer", price: 5},
+//             {id: 2, name: "Ladder", price: 50}, 
+//             {id: 5, name: "Sledge hammer", price: 20},
+//             {id: 1, name: "Stepstool", price: 15}
+          
+//         ];
