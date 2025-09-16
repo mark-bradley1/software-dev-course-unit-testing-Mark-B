@@ -88,12 +88,3 @@ describe('sortInventory function', () => {
         expect(result).toEqual([]);
     });
 })
-
-// const expectedProducts = [
-//             {id: 3, name: "Bigger Ladder", price: 100},
-//             {id: 4, name: "Hammer", price: 5},
-//             {id: 2, name: "Ladder", price: 50}, 
-//             {id: 5, name: "Sledge hammer", price: 20},
-//             {id: 1, name: "Stepstool", price: 15}
-          
-//         ];
